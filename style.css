@@ -1,4 +1,3 @@
-/* Bug in ui pending */
 *{
     padding: 0;
     margin: 0;
@@ -10,9 +9,11 @@ body{
     color: #fff;
     background-color: #060606;
 }
+
 .container{
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .logoTitle{
@@ -34,8 +35,7 @@ body{
     display: flex;
     flex-direction: column;
     height: calc(80vh - 50px);
-    gap: 2rem;
-    overflow: hidden;
+    gap: 2.2rem;
 }
 .container .top > div {
     height: 100%;
@@ -51,20 +51,8 @@ body{
 }
 
 .container .top label span, .container .bottom label span{
-   position: relative;
-   z-index: 0;
-}
-
-.container .top label span::after, .container .bottom label span::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #1d1e22;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    padding: 5px;
+    background-color:#1d1e22;
+    padding: 0.3rem;
 }
 
 .container .top textarea{
@@ -76,14 +64,16 @@ body{
     resize: none;
     padding: 1rem;
     font-size: 1rem;
+    overflow: auto;
 }
 
 .container .bottom{
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #ffffff;
     color: #060606;
 }
+
 .container .bottom label{
     color:#aaaebc;
     background-color: #060606;
@@ -92,15 +82,12 @@ body{
 
 .container .bottom iframe{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     border: none;
     outline: none;
 }
 
 @media (min-width:992px){
-    *{
-        overflow: hidden;
-    }
     .container{
         flex-direction: row;
     }
